@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Akmal Zailani - Web Dev & Elektronika</title>
+    <meta name="description"
+        content="Portofolio resmi Akmal Zailani - Mahasiswa Aktif S1 Teknik Informatika STMIK Mardira Indonesia, Pengembang Web, UI/UX Designer & Teknisi Elektronika Industri.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        accent: '#f59e0b',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .dark .glass-header {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        .cert-rotated-90 {
+            transform: rotate(90deg);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-primary-500 selection:text-white transition-colors duration-300">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-40 transition-all duration-300 glass-header border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-extrabold tracking-tight flex items-center gap-2 group">
+                    <span
+                        class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 text-white flex items-center justify-center font-black text-lg shadow-md group-hover:scale-105 transition">A</span>
+                    <span class="text-slate-900 dark:text-white">Akmal<span
+                            class="text-blue-600 dark:text-blue-400">.Z</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-1 lg:space-x-2 items-center">
+                    <a href="#about"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Tentang</a>
+                    <a href="#skills"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Keahlian</a>
+                    <a href="#projects"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Proyek</a>
+                    <a href="#experience"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Pengalaman</a>
+                    <a href="#certificates"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Sertifikat</a>
+                    <a href="#testimonials"
+                        class="nav-link px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Ulasan</a>
+
+                    <!-- Dark mode toggle -->
+                    <button id="theme-toggle"
+                        class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition ml-2"
+                        title="Toggle Tema">
+                        <i class="fas fa-moon dark:hidden text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-amber-400 text-lg"></i>
+                    </button>
+
+                    <a href="#contact"
+                        class="ml-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] transition font-semibold text-sm flex items-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Kontak Saya
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="theme-toggle-mobile"
+                        class="p-2 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition"
+                        title="Toggle Tema">
+                        <i class="fas fa-moon dark:hidden text-lg"></i>
+                        <i class="fas fa-sun hidden dark:block text-amber-400 text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-slate-800 backdrop-blur-lg">
+            <div class="px-4 pt-3 pb-5 space-y-2">
+                <a href="#about"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Tentang</a>
+                <a href="#skills"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Keahlian</a>
+                <a href="#projects"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Proyek</a>
+                <a href="#experience"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Pengalaman</a>
+                <a href="#certificates"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Sertifikat</a>
+                <a href="#testimonials"
+                    class="mobile-link block px-3 py-2.5 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl">Ulasan</a>
+                <a href="#contact"
+                    class="mobile-link block px-3 py-2.5 text-center font-bold text-white bg-blue-600 rounded-xl shadow-md">Hubungi
+                    Saya</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden relative">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div
+                class="absolute top-20 left-10 w-96 h-96 bg-blue-500/20 dark:bg-blue-600/15 rounded-full mix-blend-multiply filter blur-3xl animate-float">
+            </div>
+            <div class="absolute top-40 right-10 w-96 h-96 bg-purple-500/20 dark:bg-purple-600/15 rounded-full mix-blend-multiply filter blur-3xl animate-float"
+                style="animation-delay: 2s;"></div>
+            <div class="absolute -bottom-10 left-1/3 w-80 h-80 bg-pink-500/20 dark:bg-pink-600/15 rounded-full mix-blend-multiply filter blur-3xl animate-float"
+                style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="text-left md:w-7/12">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/40 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-300 font-semibold text-xs uppercase tracking-wider mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                        Mahasiswa S1 Teknik Informatika - STMIK Mardira Indonesia
+                    </div>
+                    <h1
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
+                        Halo, Saya <span
+                            class="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Akmal
+                            Zailani</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                        Menggabungkan ketelitian bidang <strong
+                            class="text-slate-800 dark:text-slate-100 font-semibold">Elektronika Industri</strong>
+                        dengan kreativitas modern <strong class="text-blue-600 dark:text-blue-400 font-semibold">S1
+                            Teknik Informatika & Web Development</strong>. Berpengalaman & kompetitif di bidang akademik
+                        maupun lapangan olahraga.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <a href="https://instagram.com/akmalzailani_7" target="_blank"
+                            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-7 py-3.5 rounded-full font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] transition flex items-center gap-2.5">
+                            <i class="fab fa-instagram text-xl"></i> @akmalzailani_7
+                        </a>
+                        <a href="#certificates"
+                            class="bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 px-7 py-3.5 rounded-full font-semibold hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-sm transition flex items-center gap-2">
+                            <i class="fas fa-award text-amber-500"></i> Lihat Sertifikat
+                        </a>
+                    </div>
+
+                    <!-- Quick Stats Badge -->
+                    <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-slate-200/80 dark:border-slate-800">
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">4+</span>
+                            <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Sertifikat Resmi</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">A</span>
+                            <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Predikat PKL</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">PS. Java
+                                Top</span>
+                            <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">Pemain Liga 4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Avatar / Card Graphic -->
+                <div class="md:w-5/12 flex justify-center w-full">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Decorative background glow -->
+                        <div
+                            class="absolute inset-0 rounded-3xl bg-gradient-to-tr from-blue-600 to-purple-600 rotate-6 opacity-80 blur-lg transition duration-500">
+                        </div>
+
+                        <div
+                            class="relative w-full h-full rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl p-6 flex flex-col justify-between text-white group">
+                            <!-- Card Header -->
+                            <div class="flex justify-between items-start">
+                                <div
+                                    class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-500 flex items-center justify-center text-2xl font-bold shadow-lg">
+                                    AZ
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-semibold rounded-full border border-blue-500/30">
+                                    Available for Projects
+                                </span>
+                            </div>
+
+                            <!-- Card Middle Content -->
+                            <div class="my-4 space-y-2">
+                                <h3 class="text-2xl font-bold text-white tracking-wide">Akmal Zailani</h3>
+                                <p class="text-sm text-blue-400 font-medium">Mahasiswa S1 Teknik Informatika</p>
+                                <div class="flex flex-wrap gap-2 pt-2">
+                                    <span
+                                        class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700"><i
+                                            class="fas fa-bolt text-yellow-400 mr-1"></i> Elektronika</span>
+                                    <span
+                                        class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700"><i
+                                            class="fas fa-code text-blue-400 mr-1"></i> Web Dev</span>
+                                    <span
+                                        class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-md border border-slate-700"><i
+                                            class="fas fa-futbol text-green-400 mr-1"></i> Sepakbola</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div
+                                class="pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
+                                <span>STMIK Mardira Indonesia (S1 TI)</span>
+                                <span class="flex items-center gap-1 text-emerald-400"><span
+                                        class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Katapang,
+                                    Bandung</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendidikan Section -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Latar
+                    Belakang</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Riwayat Pendidikan
+                </h2>
+                <div class="h-1.5 w-16 bg-blue-600 mx-auto rounded-full mt-3"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative border-l-2 border-blue-200 dark:border-slate-700 ml-4 sm:ml-6 space-y-10">
+
+                    <!-- Item 1 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <span
+                            class="absolute flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full -left-5 ring-4 ring-white dark:ring-slate-900 shadow-md group-hover:scale-110 transition">
+                            <i class="fas fa-university text-sm"></i>
+                        </span>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-md transition">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">STMIK Mardira Indonesia
+                                </h3>
+                                <span
+                                    class="bg-blue-100 dark:bg-blue-900/60 text-blue-800 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full animate-pulse">
+                                    Mahasiswa Aktif
+                                </span>
+                            </div>
+                            <time class="block mb-3 text-sm font-medium text-blue-600 dark:text-blue-400">S1 Teknik
+                                Informatika (Saat Ini)</time>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Menempuh studi jenjang <strong>S1 Teknik Informatika</strong> di STMIK Mardira
+                                Indonesia. Berfokus memperdalam logika algoritma pemrograman, arsitektur rekayasa
+                                perangkat lunak (software engineering), perancangan sistem informasi modern, dan
+                                pengembangan solusi digital yang inovatif.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <span
+                            class="absolute flex items-center justify-center w-10 h-10 bg-indigo-500 text-white rounded-full -left-5 ring-4 ring-white dark:ring-slate-900 shadow-md group-hover:scale-110 transition">
+                            <i class="fas fa-graduation-cap text-sm"></i>
+                        </span>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-md transition">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">SMKN 1 Katapang</h3>
+                            <time class="block mb-3 text-sm font-medium text-indigo-600 dark:text-indigo-400">Jurusan
+                                Teknik Elektronika Industri</time>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Lulus dengan predikat memuaskan. Menguasai perakitan & penyolderan komponen elektronika
+                                presisi, analisis schematic diagram, serta lulus <strong>Uji Kompetensi Keahlian (UKK)
+                                    DEFEND ID (PT Len Industri Persero)</strong> dengan Nomor:
+                                <em>0324/SERT-UKK/Len/LH-4/IV/2023</em> dan meraih <strong>Predikat Hasil Nilai
+                                    "A"</strong> pada PKL Koperasi Inti.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <span
+                            class="absolute flex items-center justify-center w-10 h-10 bg-slate-400 text-white rounded-full -left-5 ring-4 ring-white dark:ring-slate-900 shadow-md group-hover:scale-110 transition">
+                            <i class="fas fa-school text-sm"></i>
+                        </span>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-md transition">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">SMPN 2 Katapang</h3>
+                            <time class="block mb-3 text-sm font-medium text-slate-500 dark:text-slate-400">Sekolah
+                                Menengah Pertama</time>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Aktif dalam organisasi sekolah & kegiatan olahraga sepakbola, serta mulai melatih
+                                ketrampilan awal dalam dunia komputasi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <span
+                            class="absolute flex items-center justify-center w-10 h-10 bg-slate-300 dark:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-full -left-5 ring-4 ring-white dark:ring-slate-900 shadow-md group-hover:scale-110 transition">
+                            <i class="fas fa-book-open text-sm"></i>
+                        </span>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-2xl border border-slate-100 dark:border-slate-700/50 shadow-sm hover:shadow-md transition">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">SDN Sukamukti 1</h3>
+                            <time class="block mb-3 text-sm font-medium text-slate-500 dark:text-slate-400">Sekolah
+                                Dasar</time>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                Fondasi pendidikan awal dalam membentuk karakter disiplin, kerja keras, dan dorongan
+                                belajar tinggi.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian Section -->
+    <section id="skills" class="py-20 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Kompetensi
+                    & Tools</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Keahlian Saya</h2>
+                <div class="h-1.5 w-16 bg-blue-600 mx-auto rounded-full mt-3"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Perpaduan seimbang antara
+                    keterampilan teknik keras hardware (elektronika) dan keahlian lunak software (Web & UI/UX).</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Chart Container -->
+                <div
+                    class="lg:col-span-5 glass-card p-6 rounded-3xl shadow-sm border border-slate-200 dark:border-slate-800 flex flex-col justify-center items-center">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 text-center">Grafik Keahlian
+                        (Radar)</h3>
+                    <div class="w-full relative h-[320px] sm:h-[360px]">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Skill Cards Grid -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex items-start gap-5 hover:shadow-md hover:border-blue-300 dark:hover:border-blue-800 transition">
+                        <div
+                            class="w-14 h-14 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-sm">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Elektronika Industri & PCB
+                                </h3>
+                                <span
+                                    class="text-xs font-semibold bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 px-2.5 py-1 rounded-md border border-blue-200 dark:border-blue-900">95%</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3">Mahir menyolder
+                                komponen presisi, membaca schematic diagram, troubleshooting rangkaian analog/digital,
+                                serta pengujian perangkat keras.</p>
+                            <!-- Progress Bar -->
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex items-start gap-5 hover:shadow-md hover:border-purple-300 dark:hover:border-purple-800 transition">
+                        <div
+                            class="w-14 h-14 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-400 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-sm">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Web Development</h3>
+                                <span
+                                    class="text-xs font-semibold bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 px-2.5 py-1 rounded-md border border-purple-200 dark:border-purple-900">80%</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3">Membangun website
+                                modern & responsif menggunakan HTML5, Tailwind CSS, JavaScript, serta integrasi Chart.js
+                                & framework modern.</p>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-purple-600 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex items-start gap-5 hover:shadow-md hover:border-pink-300 dark:hover:border-pink-800 transition">
+                        <div
+                            class="w-14 h-14 bg-pink-100 dark:bg-pink-900/50 text-pink-600 dark:text-pink-400 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-sm">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white">UI/UX & Prototyping</h3>
+                                <span
+                                    class="text-xs font-semibold bg-pink-50 dark:bg-pink-950 text-pink-600 dark:text-pink-400 px-2.5 py-1 rounded-md border border-pink-200 dark:border-pink-900">85%</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3">Merancang
+                                antarmuka pengguna (UI) yang memanjakan mata, membuat wireframe, serta mengutamakan
+                                kemudahan navigasi pengguna (UX).</p>
+                            <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-pink-600 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek & Portofolio Section (NEW) -->
+    <section id="projects" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Karya &
+                    Eksperimen</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Proyek Pilihan</h2>
+                <div class="h-1.5 w-16 bg-blue-600 mx-auto rounded-full mt-3"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Beberapa hasil karya pengembangan
+                    web, desain antarmuka, dan sistem hardware elektronika.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10" id="project-filters">
+                <button
+                    class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition bg-blue-600 text-white shadow-md"
+                    data-filter="all">Semua Proyek</button>
+                <button
+                    class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+                    data-filter="web">Web Development</button>
+                <button
+                    class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+                    data-filter="uiux">UI/UX Design</button>
+                <button
+                    class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700"
+                    data-filter="hardware">Elektronika / IoT</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div class="project-card group bg-slate-50 dark:bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between"
+                    data-category="web">
+                    <div>
+                        <div
+                            class="relative h-48 bg-gradient-to-tr from-blue-600 to-indigo-800 overflow-hidden flex items-center justify-center p-6 text-white">
+                            <i
+                                class="fas fa-globe text-6xl opacity-30 group-hover:scale-110 transition duration-500"></i>
+                            <div
+                                class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+                                <span
+                                    class="bg-white/90 text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg">Portofolio
+                                    Interactive</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">Web
+                                    Dev</span>
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">Tailwind
+                                    & JS</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+                                Personal Interactive Portfolio Website</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Website
+                                portofolio interaktif responsif dengan Chart.js, lightbox sertifikat, ulasan pengguna,
+                                dan dukungan Dark Mode.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card group bg-slate-50 dark:bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between"
+                    data-category="hardware">
+                    <div>
+                        <div
+                            class="relative h-48 bg-gradient-to-tr from-emerald-600 to-teal-800 overflow-hidden flex items-center justify-center p-6 text-white">
+                            <i
+                                class="fas fa-microchip text-6xl opacity-30 group-hover:scale-110 transition duration-500"></i>
+                            <div
+                                class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white/90 text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg">SMKN
+                                    1 Katapang</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">Hardware</span>
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">DEFEND
+                                    ID</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">
+                                Sistem Kontrol & Rangkaian PCB Industri</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Perancangan
+                                layout PCB, soldering komponen mikrokontroler, dan analisis diagram skematik untuk uji
+                                standar industri PT Len.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card group bg-slate-50 dark:bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-700 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between"
+                    data-category="uiux">
+                    <div>
+                        <div
+                            class="relative h-48 bg-gradient-to-tr from-purple-600 to-pink-700 overflow-hidden flex items-center justify-center p-6 text-white">
+                            <i
+                                class="fas fa-layer-group text-6xl opacity-30 group-hover:scale-110 transition duration-500"></i>
+                            <div
+                                class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white/90 text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg">Figma
+                                    & Concept</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-900/50 text-purple-700 dark:text-purple-300">UI/UX</span>
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">Sports
+                                    App</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition">
+                                Desain Antarmuka Aplikasi Turnamen Sepakbola</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">Konsep UI/UX
+                                aplikasi manajemen kompetisi liga lokal yang memudahkan pemain dan manajer melihat
+                                jadwal serta statistik pertandingan.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi Olahraga Section -->
+    <section id="experience" class="py-20 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Kompetisi
+                    & Olahraga</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Pengalaman Turnamen
+                </h2>
+                <div class="h-1.5 w-16 bg-blue-600 mx-auto rounded-full mt-3"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Aktif dan berprestasi di lapangan
+                    hijau bersama PS. JAVA TOP, membangun kepemimpinan, daya tahan fisik, dan kerja sama tim yang
+                    tangguh.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Achievement Card 1 -->
+                <div
+                    class="group relative rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl min-h-[380px] flex flex-col justify-end p-8 border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop"
+                        alt="Liga 4 Bandung Utama"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 group-hover:opacity-50 transition duration-700 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent z-10">
+                    </div>
+
+                    <div class="relative z-20">
+                        <div
+                            class="w-12 h-12 bg-amber-400 text-slate-950 rounded-2xl flex items-center justify-center mb-4 shadow-lg text-xl font-bold">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-3 py-1 bg-amber-400/20 text-amber-300 text-xs font-bold rounded-full border border-amber-400/30 uppercase tracking-wider">28
+                                Sep – 19 Okt 2025</span>
+                            <span class="text-slate-400 text-xs">PS. JAVA TOP</span>
+                        </div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-extrabold mb-3 text-white group-hover:text-amber-300 transition">
+                            Liga 4 Seri Bandung Utama</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">Berpartisipasi aktif sebagai
+                            <strong>Pemain PS. JAVA TOP</strong> di ajang <em>Kompetisi Liga 4 Seri Bandung Utama Tahun
+                                2025</em>. Disahkan oleh Direktur Teknik Lukas Torona Tumbuan & Pembina Ir. Setyo Yanus
+                            Sasongko MT.
+                        </p>
+
+                        <button onclick="openCertificateModalByKey('liga4_bandung')"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 bg-slate-950/80 px-4 py-2 rounded-full border border-amber-400/30 backdrop-blur-sm transition">
+                            <i class="fas fa-certificate"></i> Lihat Detail Sertifikat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div
+                    class="group relative rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl min-h-[380px] flex flex-col justify-end p-8 border border-slate-800">
+                    <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=800&auto=format&fit=crop"
+                        alt="Liga 4 Gubernur Jabar"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 group-hover:opacity-50 transition duration-700 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent z-10">
+                    </div>
+
+                    <div class="relative z-20">
+                        <div
+                            class="w-12 h-12 bg-emerald-400 text-slate-950 rounded-2xl flex items-center justify-center mb-4 shadow-lg text-xl font-bold">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-3 py-1 bg-emerald-400/20 text-emerald-300 text-xs font-bold rounded-full border border-emerald-400/30 uppercase tracking-wider">Tahun
+                                2025</span>
+                            <span class="text-slate-400 text-xs">PS. JAVA TOP</span>
+                        </div>
+                        <h3
+                            class="text-2xl sm:text-3xl font-extrabold mb-3 text-white group-hover:text-emerald-300 transition">
+                            Liga 4 Seri 2 Piala Gubernur Jabar</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">Mewakili <strong>PS. JAVA TOP</strong>
+                            dalam <em>Kompetisi Liga 4 Seri 2 Piala Gubernur Jawa Barat Tahun 2025</em>, menuntut
+                            konsistensi fisik, taktik tim, dan semangat juang tinggi.</p>
+
+                        <button onclick="openCertificateModalByKey('liga4_jabar')"
+                            class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300 bg-slate-950/80 px-4 py-2 rounded-full border border-emerald-400/30 backdrop-blur-sm transition">
+                            <i class="fas fa-certificate"></i> Lihat Detail Sertifikat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikat Section -->
+    <section id="certificates" class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Bukti
+                    Otentik Kompetensi</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Sertifikat &
+                    Penghargaan Resmi</h2>
+                <div class="h-1.5 w-16 bg-blue-600 mx-auto rounded-full mt-3"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Seluruh narasi dan informasi
+                    sertifikat di bawah ini disesuaikan 100% dengan fisik dokumen resmi milik Akmal Zailani. <br><span
+                        class="text-xs text-blue-600 dark:text-blue-400 font-semibold">*Klik kartu sertifikat untuk
+                        melihat rincian dokumen & visualisasi penuh.*</span></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Sertifikat 1: UKK DEFEND ID -->
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 hover:border-blue-500 dark:hover:border-blue-500 transition duration-300 shadow-sm flex flex-col justify-between group cursor-pointer"
+                    onclick="openCertificateModalByKey('ukk')">
+                    <div>
+                        <div
+                            class="relative w-full aspect-[4/3] bg-slate-200 dark:bg-slate-950 rounded-2xl overflow-hidden mb-6 flex justify-center items-center">
+                            <img src="1000161305.jpg" alt="Sertifikat UKK DEFEND ID PT Len Industri"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'flex flex-col items-center p-6 text-center text-slate-500\'><i class=\'fas fa-award text-5xl text-blue-500 mb-3\'></i><p class=\'font-bold text-slate-700 dark:text-slate-300\'>Sertifikat UKK DEFEND ID</p><p class=\'text-xs text-slate-400 mt-1\'>PT Len Industri (Persero)</p></div>';">
+                            <div
+                                class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"><i
+                                        class="fas fa-search-plus"></i> lihat Detail Otentik</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full">Sertifikat
+                                Kompetensi</span>
+                            <span
+                                class="px-2.5 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md">PT
+                                Len Industri (Persero)</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Uji Kompetensi Keahlian (UKK)
+                            DEFEND ID</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                            Dinyatakan <strong>Lulus Uji Kompetensi Kejuruan</strong> dan diakui memiliki kompetensi
+                            keahlian <em>Teknik Elektronika Industri</em> di SMK Negeri 1 Katapang.
+                        </p>
+                        <div
+                            class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700/60 pt-3">
+                            <div><strong class="text-slate-700 dark:text-slate-300">No. Sertifikat:</strong>
+                                0324/SERT-UKK/Len/LH-4/IV/2023</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">NIS:</strong> 202110075 |
+                                <strong>Terbit:</strong> 04 April 2023
+                            </div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Penguji:</strong> Alvin Anindya
+                                Sapi'ie, S.T., M.B.A. (Koordinator UKK)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 2: PKL Koperasi Inti -->
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 hover:border-purple-500 dark:hover:border-purple-500 transition duration-300 shadow-sm flex flex-col justify-between group cursor-pointer"
+                    onclick="openCertificateModalByKey('pkl')">
+                    <div>
+                        <div
+                            class="relative w-full aspect-[4/3] bg-slate-200 dark:bg-slate-950 rounded-2xl overflow-hidden mb-6 flex justify-center items-center">
+                            <img src="1000161306.jpg" alt="Sertifikat PKL Koperasi Inti"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'flex flex-col items-center p-6 text-center text-slate-500\'><i class=\'fas fa-file-signature text-5xl text-purple-500 mb-3\'></i><p class=\'font-bold text-slate-700 dark:text-slate-300\'>Sertifikat PKL Koperasi Inti</p><p class=\'text-xs text-slate-400 mt-1\'>Predikat Hasil: A</p></div>';">
+                            <div
+                                class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"><i
+                                        class="fas fa-search-plus"></i> Lihat Detail Otentik</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-purple-100 dark:bg-purple-900/60 text-purple-700 dark:text-purple-300 text-xs font-bold rounded-full">Praktik
+                                Kerja Lapangan</span>
+                            <span
+                                class="px-2.5 py-0.5 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold rounded">Predikat
+                                Hasil: "A"</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sertifikat Praktik Kerja
+                            Lapangan (PKL)</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                            Telah melaksanakan Praktik Kerja Lapangan di <strong>KOPERASI INTI (We Care)</strong>
+                            sebagai siswa SMK Negeri 1 Katapang (Teknik Elektronika Industri) dengan hasil Sangat Baik.
+                        </p>
+                        <div
+                            class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700/60 pt-3">
+                            <div><strong class="text-slate-700 dark:text-slate-300">Periode PKL:</strong> 04 April 2022
+                                s.d. 30 Juni 2022</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">NIS:</strong> 202110075 |
+                                <strong>Diterbitkan:</strong> Bandung, 05 Juli 2022
+                            </div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Penandatangan:</strong> Moh. Farid
+                                Barkah (Manager Corporate)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 3: Liga 4 Seri Bandung Utama -->
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 hover:border-amber-500 dark:hover:border-amber-500 transition duration-300 shadow-sm flex flex-col justify-between group cursor-pointer"
+                    onclick="openCertificateModalByKey('liga4_bandung')">
+                    <div>
+                        <div
+                            class="relative w-full aspect-[4/3] bg-slate-200 dark:bg-slate-950 rounded-2xl overflow-hidden mb-6 flex justify-center items-center">
+                            <img src="1000161307.jpg" alt="Piagam Liga 4 Bandung Utama"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'flex flex-col items-center p-6 text-center text-slate-500\'><i class=\'fas fa-trophy text-5xl text-amber-500 mb-3\'></i><p class=\'font-bold text-slate-700 dark:text-slate-300\'>Liga 4 Bandung Utama 2025</p><p class=\'text-xs text-slate-400 mt-1\'>PS. JAVA TOP</p></div>';">
+                            <div
+                                class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"><i
+                                        class="fas fa-search-plus"></i> Lihat Detail Otentik</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300 text-xs font-bold rounded-full">Piagam
+                                Olahraga Resmi</span>
+                            <span
+                                class="px-2.5 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md">PS.
+                                JAVA TOP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sertifikat Pemain Liga 4 Seri
+                            Bandung Utama</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                            Diberikan dengan bangga kepada <strong>AKMAL ZAILANI</strong> sebagai <strong>Pemain PS.
+                                JAVA TOP</strong> pada Kompetisi Liga 4 Seri Bandung Utama Tahun 2025.
+                        </p>
+                        <div
+                            class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700/60 pt-3">
+                            <div><strong class="text-slate-700 dark:text-slate-300">Tanggal Pelaksanaan:</strong> 28
+                                September – 19 Oktober 2025</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Mitra Utama:</strong> AIMTOP Indo
+                                Nuansa Kimia</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Penandatangan:</strong> Lukas Torona
+                                Tumbuan & Ir. Setyo Yanus Sasongko MT</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 4: Liga 4 Seri 2 Piala Gubernur Jawa Barat -->
+                <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-3xl border border-slate-200 dark:border-slate-700/80 hover:border-emerald-500 dark:hover:border-emerald-500 transition duration-300 shadow-sm flex flex-col justify-between group cursor-pointer"
+                    onclick="openCertificateModalByKey('liga4_jabar')">
+                    <div>
+                        <div
+                            class="relative w-full aspect-[4/3] bg-slate-200 dark:bg-slate-950 rounded-2xl overflow-hidden mb-6 flex justify-center items-center">
+                            <img src="1000161309.jpg" alt="Piagam Liga 4 Gubernur Jabar"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'flex flex-col items-center p-6 text-center text-slate-500\'><i class=\'fas fa-medal text-5xl text-emerald-500 mb-3\'></i><p class=\'font-bold text-slate-700 dark:text-slate-300\'>Liga 4 Gubernur Jabar 2025</p><p class=\'text-xs text-slate-400 mt-1\'>PS. JAVA TOP</p></div>';">
+                            <div
+                                class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <span
+                                    class="bg-white text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5"><i
+                                        class="fas fa-search-plus"></i> Lihat Detail Otentik</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span
+                                class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-full">Piagam
+                                Tingkat Provinsi</span>
+                            <span
+                                class="px-2.5 py-0.5 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs rounded-md">PS.
+                                JAVA TOP</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Sertifikat Pemain Liga 4 Seri
+                            2 Piala Gubernur Jabar</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                            Diberikan dengan bangga kepada <strong>AKMAL ZAILANI</strong> sebagai <strong>Pemain PS.
+                                JAVA TOP</strong> pada Kompetisi Liga 4 Seri 2 Piala Gubernur Jawa Barat Tahun 2025.
+                        </p>
+                        <div
+                            class="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-700/60 pt-3">
+                            <div><strong class="text-slate-700 dark:text-slate-300">Tahun Pergelaran:</strong> Tahun
+                                2025</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Mitra Utama:</strong> AIMTOP Indo
+                                Nuansa Kimia</div>
+                            <div><strong class="text-slate-700 dark:text-slate-300">Penandatangan:</strong> Lukas Torona
+                                Tumbuan & Ir. Setyo Yanus Sasongko MT</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ulasan & Testimoni Section (INTERACTIVE) -->
+    <section id="testimonials" class="py-20 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span
+                        class="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider">Testimoni
+                        & Tanggapan</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Ulasan &
+                        Rekomendasi</h2>
+                    <div class="h-1.5 w-16 bg-blue-600 rounded-full mt-3"></div>
+                </div>
+                <button onclick="openReviewModal()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-blue-500/25 hover:scale-[1.02] transition flex items-center gap-2 self-start md:self-auto">
+                    <i class="fas fa-plus-circle"></i> Tambah Ulasan Anda
+                </button>
+            </div>
+
+            <!-- Reviews Grid Container -->
+            <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Initial Sample Reviews dynamically loaded or fallback -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact Section -->
+    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <a href="#" class="text-3xl font-extrabold tracking-tight flex items-center gap-2">
+                        <span
+                            class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xl">A</span>
+                        <span>Akmal<span class="text-blue-500">.Zailani</span></span>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Tertarik bekerja sama untuk proyek pembuatan website, antarmuka UI/UX, atau integrasi perangkat
+                        keras elektronika? Silakan kirim pesan atau hubungi media sosial saya.
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-3 text-slate-300 text-sm">
+                            <span
+                                class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-blue-400"><i
+                                    class="fas fa-location-dot"></i></span>
+                            <span>Katapang, Kabupaten Bandung, Jawa Barat</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300 text-sm">
+                            <span
+                                class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-blue-400"><i
+                                    class="fas fa-university"></i></span>
+                            <span>STMIK Mardira Indonesia (S1 Teknik Informatika)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div class="lg:col-span-7 bg-slate-800/80 p-8 rounded-3xl border border-slate-700/60 shadow-xl">
+                    <h3 class="text-xl font-bold text-white mb-2">Kirim Pesan Langsung</h3>
+                    <p class="text-slate-400 text-xs mb-6">Isi formulir di bawah untuk mengirim pesan cepat ke
+                        WhatsApp/Instagram Akmal.</p>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nama Lengkap</label>
+                                <input type="text" id="contact-name" required placeholder="Masukkan nama Anda"
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email / No. HP</label>
+                                <input type="text" id="contact-email" required placeholder="email@domain.com / 08xxx"
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Subjek / Topik</label>
+                            <input type="text" id="contact-subject" required
+                                placeholder="Contoh: Tawaran Proyek Website"
+                                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1.5">Pesan Anda</label>
+                            <textarea id="contact-message" rows="3" required placeholder="Tuliskan detail pesan Anda..."
+                                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 custom-scrollbar"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div
+                class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="year"></span> Akmal Zailani. Hak Cipta Dilindungi.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://instagram.com/akmalzailani_7" target="_blank"
+                        class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-pink-400 hover:bg-slate-700 transition"
+                        title="Instagram">
+                        <i class="fab fa-instagram text-base"></i>
+                    </a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition"
+                        title="GitHub">
+                        <i class="fab fa-github text-base"></i>
+                    </a>
+                    <a href="#"
+                        class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:bg-slate-700 transition"
+                        title="LinkedIn">
+                        <i class="fab fa-linkedin text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-blue-600 text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 z-30 hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Certificate Lightbox Modal -->
+    <div id="cert-modal"
+        class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div
+            class="relative max-w-4xl w-full bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="p-4 border-b border-slate-800 flex justify-between items-center text-white">
+                <div>
+                    <h3 id="modal-title" class="font-bold text-lg">Detail Sertifikat</h3>
+                    <p id="modal-subtitle" class="text-xs text-blue-400 font-medium"></p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="rotateModalImage()"
+                        class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg flex items-center gap-1.5 transition">
+                        <i class="fas fa-rotate"></i> Putar (90°)
+                    </button>
+                    <button onclick="closeCertificateModal()"
+                        class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center text-sm transition">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Modal Body Image View + Information -->
+            <div class="p-6 flex-1 grid grid-cols-1 md:grid-cols-12 gap-6 overflow-auto bg-slate-950/80 min-h-[350px]">
+                <div
+                    class="md:col-span-7 flex justify-center items-center overflow-hidden min-h-[260px] bg-slate-900/70 rounded-2xl p-3 border border-slate-800/80">
+                    <img id="modal-img" src="" alt="Certificate Large"
+                        class="max-h-[55vh] max-w-full object-contain transition-transform duration-300">
+                </div>
+                <div
+                    class="md:col-span-5 flex flex-col justify-between text-slate-300 text-xs space-y-4 bg-slate-900 p-5 rounded-2xl border border-slate-800">
+                    <div>
+                        <h4
+                            class="text-sm font-bold text-white mb-3 flex items-center gap-2 border-b border-slate-800 pb-2">
+                            <i class="fas fa-shield-halved text-blue-400"></i> Informasi Otentik Dokumen
+                        </h4>
+                        <div class="space-y-2.5" id="modal-details-list">
+                            <!-- Populated dynamically by JS -->
+                        </div>
+                    </div>
+                    <div
+                        class="pt-3 border-t border-slate-800 text-slate-400 text-[11px] leading-relaxed flex items-center gap-2">
+                        <i class="fas fa-circle-check text-emerald-400 text-base shrink-0"></i>
+                        <span>Informasi ini dicocokkan 100% dengan fisik sertifikat resmi Akmal Zailani.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="p-3 border-t border-slate-800 text-center text-xs text-slate-400 bg-slate-900">
+                Gunakan tombol "Putar" untuk memutar orientasi gambar dokumen sertifikat.
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Form Modal -->
+    <div id="review-modal"
+        class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div
+            class="relative max-w-lg w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-2xl p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Berikan Ulasan / Kesan</h3>
+                <button onclick="closeReviewModal()"
+                    class="text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form onsubmit="saveUserReview(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Nama
+                        Lengkap</label>
+                    <input type="text" id="review-name" required placeholder="Contoh: Budi Santoso"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Profesi /
+                        Status</label>
+                    <input type="text" id="review-role" required placeholder="Contoh: Teman Kuliah / Rekan Kerja"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Rating</label>
+                    <select id="review-rating"
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500">
+                        <option value="5">⭐⭐⭐⭐⭐ (5/5) Sangat Puas</option>
+                        <option value="4">⭐⭐⭐⭐ (4/5) Bagus</option>
+                        <option value="3">⭐⭐⭐ (3/3) Cukup Baik</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Ulasan / Pesan
+                        Singkat</label>
+                    <textarea id="review-text" rows="3" required placeholder="Tulis ulasan Anda di sini..."
+                        class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl px-4 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-md transition">
+                    Simpan Ulasan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts Logic -->
+    <script>
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle Logic
+        const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+
+        function initTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
+
+        themeToggles.forEach(toggle => {
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                    if (document.documentElement.classList.contains('dark')) {
+                        localStorage.theme = 'dark';
+                    } else {
+                        localStorage.theme = 'light';
+                    }
+                    updateChartColors();
+                });
+            }
+        });
+
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fas fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fas fa-times text-xl';
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fas fa-bars text-xl';
+            });
+        });
+
+        // Navbar Scroll effect & Back to top visibility
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Certificate Data Dictionary
+        const certificateData = {
+            'ukk': {
+                img: '1000161305.jpg',
+                title: 'Sertifikat Uji Kompetensi Keahlian (UKK) DEFEND ID',
+                subtitle: 'PT Len Industri (Persero) & SMKN 1 Katapang',
+                isRotatedDefault: false,
+                details: [
+                    { label: 'Nomor Sertifikat', value: '0324/SERT-UKK/Len/LH-4/IV/2023' },
+                    { label: 'Nama Penerima', value: 'Akmal Zailani' },
+                    { label: 'NIS / No. Induk', value: '202110075' },
+                    { label: 'Kompetensi Keahlian', value: 'Teknik Elektronika Industri' },
+                    { label: 'Sekolah', value: 'SMK Negeri 1 Katapang' },
+                    { label: 'Lembaga Penguji', value: 'PT Len Industri (Persero) / DEFEND ID' },
+                    { label: 'Tanggal Terbit', value: 'Bandung, 04 April 2023' },
+                    { label: 'Penandatangan', value: 'Alvin Anindya Sapi\'ie, S.T., M.B.A.' },
+                    { label: 'Jabatan Signee', value: 'Koordinator Uji Kompetensi' },
+                    { label: 'Hasil/Status', value: 'Lulus Uji Kompetensi Kejuruan' }
+                ]
+            },
+            'pkl': {
+                img: '1000161306.jpg',
+                title: 'Sertifikat Praktik Kerja Lapangan (PKL)',
+                subtitle: 'Koperasi Inti (We Care)',
+                isRotatedDefault: false,
+                details: [
+                    { label: 'Nama Penerima', value: 'Akmal Zailani' },
+                    { label: 'NIS', value: '202110075' },
+                    { label: 'Sekolah & Jurusan', value: 'SMK N 1 Katapang - Teknik Elektronika Industri' },
+                    { label: 'Perusahaan / Perhimpunan', value: 'KOPERASI INTI (We Care)' },
+                    { label: 'Tanggal Mulai', value: '04 April 2022' },
+                    { label: 'Tanggal Akhir', value: '30 Juni 2022' },
+                    { label: 'Hasil Evaluasi', value: 'Predikat A (Sangat Baik)' },
+                    { label: 'Diterbitkan Pada', value: 'Bandung, 05 Juli 2022' },
+                    { label: 'Penandatangan', value: 'Moh. Farid Barkah (Manager Corporate)' }
+                ]
+            },
+            'liga4_bandung': {
+                img: '1000161307.jpg',
+                title: 'Sertifikat Pemain Liga 4 Seri Bandung Utama',
+                subtitle: 'Kompetisi Liga 4 Tahun 2025',
+                isRotatedDefault: false,
+                details: [
+                    { label: 'Nama Pemain', value: 'AKMAL ZAILANI' },
+                    { label: 'Sebagai', value: 'PEMAIN PS. JAVA TOP' },
+                    { label: 'Nama Turnamen', value: 'Kompetisi Liga 4 Seri Bandung Utama Tahun 2025' },
+                    { label: 'Tanggal Pelaksanaan', value: '28 September – 19 Oktober 2025' },
+                    { label: 'Sponsor / Mitrage', value: 'AIMTOP Indo Nuansa Kimia' },
+                    { label: 'Penandatangan 1', value: 'Lukas Torona Tumbuan (Direktur Teknik PS. JAVA TOP)' },
+                    { label: 'Penandatangan 2', value: 'Ir. Setyo Yanus Sasongko MT (Pembina PS. JAVA TOP)' }
+                ]
+            },
+            'liga4_jabar': {
+                img: '1000161309.jpg',
+                title: 'Sertifikat Pemain Liga 4 Seri 2 Piala Gubernur Jabar',
+                subtitle: 'Kompetisi Liga 4 Tahun 2025',
+                isRotatedDefault: false,
+                details: [
+                    { label: 'Nama Pemain', value: 'AKMAL ZAILANI' },
+                    { label: 'Sebagai', value: 'PEMAIN PS. JAVA TOP' },
+                    { label: 'Nama Turnamen', value: 'Kompetisi Liga 4 Seri 2 Piala Gubernur Jawa Barat Tahun 2025' },
+                    { label: 'Tahun Pergelaran', value: 'Tahun 2025' },
+                    { label: 'Sponsor / Mitrage', value: 'AIMTOP Indo Nuansa Kimia' },
+                    { label: 'Penandatangan 1', value: 'Lukas Torona Tumbuan (Direktur Teknik PS. JAVA TOP)' },
+                    { label: 'Penandatangan 2', value: 'Ir. Setyo Yanus Sasongko MT (Pembina PS. JAVA TOP)' }
+                ]
+            }
+        };
+
+        let currentRotation = 0;
+        const certModal = document.getElementById('cert-modal');
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+
+        function openCertificateModalByKey(key) {
+            const data = certificateData[key];
+            if (!data) return;
+
+            modalImg.src = data.img;
+            modalTitle.textContent = data.title;
+            const subtitleEl = document.getElementById('modal-subtitle');
+            if (subtitleEl) subtitleEl.textContent = data.subtitle;
+
+            const listEl = document.getElementById('modal-details-list');
+            if (listEl) {
+                listEl.innerHTML = data.details.map(item => `
+                    <div class="flex justify-between items-start gap-2 text-[12px]">
+                        <span class="text-slate-400 font-medium shrink-0">${item.label}:</span>
+                        <span class="font-semibold text-slate-100 text-right">${item.value}</span>
+                    </div>
+                `).join('');
+            }
+
+            currentRotation = data.isRotatedDefault ? 90 : 0;
+            modalImg.style.transform = `rotate(${currentRotation}deg)`;
+            certModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openCertificateModal(imgSrc, title, isRotatedByDefault = false) {
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            const subtitleEl = document.getElementById('modal-subtitle');
+            if (subtitleEl) subtitleEl.textContent = 'Dokumen Sertifikat Resmi';
+            const listEl = document.getElementById('modal-details-list');
+            if (listEl) {
+                listEl.innerHTML = `<p class="text-slate-400 text-xs">Menampilkan berkas sertifikat: ${imgSrc}</p>`;
+            }
+            currentRotation = isRotatedByDefault ? 90 : 0;
+            modalImg.style.transform = `rotate(${currentRotation}deg)`;
+            certModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertificateModal() {
+            certModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function rotateModalImage() {
+            currentRotation = (currentRotation + 90) % 360;
+            modalImg.style.transform = `rotate(${currentRotation}deg)`;
+        }
+
+        certModal.addEventListener('click', (e) => {
+            if (e.target === certModal) {
+                closeCertificateModal();
+            }
+        });
+
+        // Project Filters Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+                    b.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+                btn.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                btn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+
+                const filter = btn.dataset.filter;
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Review System (LocalStorage + Dynamic rendering)
+        const defaultReviews = [
+            {
+                name: 'Naufal Arrizal',
+                role: 'Rekan Tim Sepakbola PS. JAVA TOP',
+                rating: 5,
+                text: 'Akmal adalah sosok pemain yang punya kedisiplinan dan kerja sama luar biasa di lapangan. Sangat andal dalam situasi kompetitif!'
+            },
+            {
+                name: 'Dosen / Pembimbing',
+                role: 'STMIK Mardira Indonesia (S1 Teknik Informatika)',
+                rating: 5,
+                text: 'Memiliki dorongan belajar yang kuat di bidang rekayasa perangkat lunak dan daya analitis tinggi dalam menyelesaikan tugas-tugas perkuliahan.'
+            },
+            {
+                name: 'Koperasi Inti We Care',
+                role: 'Tempat PKL 2022',
+                rating: 5,
+                text: 'Sangat cekatan dan bertentangan dengan hasil kerja yang rapi selama masa Praktik Kerja Lapangan. Layak mendapatkan predikat Nilai A.'
+            }
+        ];
+
+        function getReviews() {
+            const stored = localStorage.getItem('akmal_portfolio_reviews');
+            if (stored) {
+                try { return JSON.parse(stored); } catch (e) { return defaultReviews; }
+            }
+            return defaultReviews;
+        }
+
+        function renderReviews() {
+            const reviews = getReviews();
+            const container = document.getElementById('reviews-container');
+            container.innerHTML = '';
+
+            reviews.forEach(rev => {
+                const stars = '⭐'.repeat(rev.rating || 5);
+                const cardHtml = `
+                    <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition flex flex-col justify-between relative group">
+                        <i class="fas fa-quote-left text-3xl text-blue-100 dark:text-slate-800 absolute top-6 right-6"></i>
+                        <div>
+                            <div class="text-xs mb-3 text-amber-400">${stars}</div>
+                            <p class="text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed mb-6">"${rev.text}"</p>
+                        </div>
+                        <div class="flex items-center gap-3 border-t border-slate-100 dark:border-slate-800 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-600 dark:text-blue-300 font-bold flex items-center justify-center text-sm">
+                                ${rev.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm">${rev.name}</h4>
+                                <p class="text-slate-500 dark:text-slate-400 text-xs">${rev.role}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += cardHtml;
+            });
+        }
+
+        function openReviewModal() {
+            document.getElementById('review-modal').classList.remove('hidden');
+        }
+        function closeReviewModal() {
+            document.getElementById('review-modal').classList.add('hidden');
+        }
+
+        function saveUserReview(e) {
+            e.preventDefault();
+            const name = document.getElementById('review-name').value;
+            const role = document.getElementById('review-role').value;
+            const rating = parseInt(document.getElementById('review-rating').value);
+            const text = document.getElementById('review-text').value;
+
+            const current = getReviews();
+            current.unshift({ name, role, rating, text });
+            localStorage.setItem('akmal_portfolio_reviews', JSON.stringify(current));
+
+            renderReviews();
+            closeReviewModal();
+            alert('Terima kasih! Ulasan Anda telah disimpan.');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const subject = document.getElementById('contact-subject').value;
+            const msg = document.getElementById('contact-message').value;
+
+            const text = `Halo Akmal Zailani, saya ${name}.%0A%0ATopik: ${subject}%0APesan: ${msg}`;
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        // Chart.js Radar Initialization
+        let skillsChart;
+        document.addEventListener("DOMContentLoaded", function () {
+            renderReviews();
+
+            const ctx = document.getElementById('skillsChart').getContext('2d');
+
+            skillsChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        'Menyolder Presisi',
+                        'Baca Schematic Diagram',
+                        'Web Development',
+                        'UI/UX Design',
+                        'Kerja Sama Tim & Olahraga'
+                    ],
+                    datasets: [{
+                        label: 'Tingkat Penguasaan (%)',
+                        data: [95, 85, 80, 85, 90],
+                        backgroundColor: 'rgba(59, 130, 246, 0.25)',
+                        borderColor: '#3b82f6',
+                        pointBackgroundColor: '#2563eb',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#3b82f6',
+                        borderWidth: 2,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            angleLines: { color: 'rgba(148, 163, 184, 0.2)' },
+                            grid: { color: 'rgba(148, 163, 184, 0.2)' },
+                            pointLabels: {
+                                font: {
+                                    family: "'Plus Jakarta Sans', sans-serif",
+                                    size: 11,
+                                    weight: '600'
+                                },
+                                color: document.documentElement.classList.contains('dark') ? '#94a3b8' : '#475569'
+                            },
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            padding: 12,
+                            cornerRadius: 10,
+                            bodyFont: { family: "'Plus Jakarta Sans', sans-serif" }
+                        }
+                    }
+                }
+            });
+        });
+
+        function updateChartColors() {
+            if (!skillsChart) return;
+            const isDark = document.documentElement.classList.contains('dark');
+            skillsChart.options.scales.r.pointLabels.color = isDark ? '#cbd5e1' : '#475569';
+            skillsChart.options.scales.r.grid.color = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+            skillsChart.update();
+        }
+    </script>
+</body>
+
+</html>
